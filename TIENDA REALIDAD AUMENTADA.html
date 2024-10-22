@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Juegos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .game {
+            border: 1px solid #333;
+            background: #2d2d2d; 
+            color: #ffffff; 
+            margin: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            max-width: 500px; 
+            margin: 20px auto; 
+        }
+        .game img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 10px; 
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #arContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+    </style>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
+</head>
+<body background="https://github.com/Paul00121/imagenes_fondo/blob/main/fondo%20de%20portada?raw=true">
+
+<header>
+    <h1>Tienda de Juegos de Consola</h1>
+    <nav>
+        <a href="#juegos">Juegos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ar" id="arButton">Ver en AR</a>
+    </nav>
+</header>
+
+<div class="container" id="juegos">
+    <h2>Lista de Juegos</h2>
+
+    <div class="game">
+        <h3>Juego 1</h3>
+        <img src="https://raw.githubusercontent.com/H1AV/Portadas-juegos/31fff2b8c1f68061a9a524c78d46aaf7b6551864/EGS_EASPORTSFC25StandardEdition_EACanada_S2_1200x1600-6e6b5c1d5d30e15b1dbdde721c6bc544.jpg" alt="Juego 1">
+        <p>EA SPORTS FC™ 25 Standard Edition</p>
+        <p>Precio: $69.99</p>
+        <a href="https://paul00121.github.io/Descripcion/">
+            <button>Descripcion</button>
+        </a>
+    </div>
+
+    <div class="game">
+        <h3>Juego 2</h3>
+        <img src="https://raw.githubusercontent.com/H1AV/Portadas-juegos/31fff2b8c1f68061a9a524c78d46aaf7b6551864/actual_1364906194.jpg" alt="Juego 2">
+        <p>Grand Theft Auto V</p>
+        <p>Precio: $19.99</p>
+        <a href="https://paul00121.github.io/Descripcion-2/">
+            <button>Descripcion</button>
+        </a>
+    </div>
+
+    <div class="game">
+        <h3>Juego 3</h3>
+        <img src="https://github.com/H1AV/Portadas-juegos/blob/main/dead_by_daylight-3434306.webp?raw=true" alt="Juego 3">
+        <p>dead by daylight</p>
+        <p>Precio: $14.99</p>
+        <a href="https://paul00121.github.io/Descripcion-3/">
+            <button>Descripcion</button>
+        </a>
+    </div>
+
+    <div class="game">
+        <h3>Juego 4</h3>
+        <img src="https://github.com/H1AV/Portadas-juegos/blob/main/black_myth_wu_kong-5858054.webp?raw=true" alt="Juego 4">
+        <p>Black Myth: Wukong</p>
+        <p>Precio: $59.99</p>
+        <a href="https://paul00121.github.io/Descripcion-4/">
+            <button>Descripcion</button>
+        </a>
+    </div>
+
+    <div class="game">
+        <h3>Juego 5</h3>
+        <img src="https://github.com/H1AV/Portadas-juegos/blob/main/EGS_AlanWake2_RemedyEntertainment_S2_1200x1600-c7c8091ddac0f9669c8e5905bca88aaa.jpg?raw=true" alt="Juego 5">
+        <p>alan wake 2</p>
+        <p>Precio: $42.99</p>
+        <a href="https://paul00121.github.io/Descripcion-5/">
+            <button>Descripcion</button>
+        </a>
+    </div>
+</div>
+
+<!-- Contenedor de AR -->
+<div id="arContainer">
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-box position='0 0.5 0' material='color: red;'></a-box>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</div>
+
+<footer id="contacto">
+    <p>Contacto: info@tiendadejuegos.com</p>
+    <p>&copy; 2024 Tienda de Juegos</p>
+</footer>
+
+<script>
+    document.getElementById('arButton').onclick = function() {
+        document.getElementById('arContainer').style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Deshabilita el scroll
+    };
+</script>
+
+</body>
+</html>
